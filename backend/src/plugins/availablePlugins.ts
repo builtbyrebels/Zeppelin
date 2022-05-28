@@ -24,6 +24,7 @@ import { PostPlugin } from "./Post/PostPlugin";
 import { ReactionRolesPlugin } from "./ReactionRoles/ReactionRolesPlugin";
 import { RemindersPlugin } from "./Reminders/RemindersPlugin";
 import { RolesPlugin } from "./Roles/RolesPlugin";
+import { SelectMenuRolesPlugin } from "./SelectMenuRoles/SelectMenuRolesPlugin";
 import { SelfGrantableRolesPlugin } from "./SelfGrantableRoles/SelfGrantableRolesPlugin";
 import { SlowmodePlugin } from "./Slowmode/SlowmodePlugin";
 import { SpamPlugin } from "./Spam/SpamPlugin";
@@ -36,8 +37,6 @@ import { WelcomeMessagePlugin } from "./WelcomeMessage/WelcomeMessagePlugin";
 import { ZeppelinGlobalPluginBlueprint, ZeppelinGuildPluginBlueprint } from "./ZeppelinPluginBlueprint";
 import { PhishermanPlugin } from "./Phisherman/PhishermanPlugin";
 import { InternalPosterPlugin } from "./InternalPoster/InternalPosterPlugin";
-import { RoleManagerPlugin } from "./RoleManager/RoleManagerPlugin";
-import { RoleButtonsPlugin } from "./RoleButtons/RoleButtonsPlugin";
 
 // prettier-ignore
 export const guildPlugins: Array<ZeppelinGuildPluginBlueprint<any>> = [
@@ -75,8 +74,7 @@ export const guildPlugins: Array<ZeppelinGuildPluginBlueprint<any>> = [
   ContextMenuPlugin,
   PhishermanPlugin,
   InternalPosterPlugin,
-  RoleManagerPlugin,
-  RoleButtonsPlugin,
+  SelectMenuRolesPlugin
 ];
 
 // prettier-ignore
