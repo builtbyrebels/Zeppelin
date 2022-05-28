@@ -56,7 +56,7 @@ export const PostSelectRolesCmd = selectRolesCmd({
     const rows = splitButtonsIntoRows(selectMenus, Object.values(group.menus)); // new MessageActionRow().addComponents(buttons);
 
     try {
-      const newMsg = await args.channel.send({ content: group.message.content as string | MessageOptions, components: rows });
+      const newMsg = await args.channel.send({ content: group.message as string, components: rows });
 
       for (const btn of toInsert) {
         await pluginData.state.selectMenus.add(args.channel.id, newMsg.id, btn.customId, btn.selectGroup, btn.menuName);
