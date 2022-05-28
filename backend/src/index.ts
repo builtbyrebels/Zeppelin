@@ -350,6 +350,9 @@ connect().then(async () => {
 
   client.once("ready", () => {
     startUptimeCounter();
+ 
+    const totalMembers = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0)
+    client.user?.setPresence({ activities: [{ name: `${totalMembers} Gamers`, type: "WATCHING" }], status: "online" });    
   });
 
   client.on(Constants.Events.RATE_LIMIT, (data) => {
