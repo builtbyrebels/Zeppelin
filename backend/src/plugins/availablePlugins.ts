@@ -76,7 +76,7 @@ export const guildPlugins: Array<ZeppelinGuildPluginBlueprint<any>> = [
   ContextMenuPlugin,
   PhishermanPlugin,
   InternalPosterPlugin,
-  SelectMenuRolesPlugin
+  SelectMenuRolesPlugin,
   RoleManagerPlugin,
   RoleButtonsPlugin,
 ];
