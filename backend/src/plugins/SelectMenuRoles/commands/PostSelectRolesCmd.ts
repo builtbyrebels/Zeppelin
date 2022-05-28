@@ -12,7 +12,7 @@ export const PostSelectRolesCmd = selectRolesCmd({
 
   signature: {
     channel: ct.textChannel(),
-    selectGroup: ct.string(),
+    selectGroup: ct.embed(),
   },
 
   async run({ message: msg, args, pluginData }) {
