@@ -2,7 +2,6 @@ import { createHash } from "crypto";
 import { MessageButton, MessageSelectMenu, Snowflake, MessageSelectOptionData, MessageOptions } from "discord.js";
 import moment from "moment";
 import { sendErrorMessage, sendSuccessMessage } from "src/pluginUtils";
-import { tMessageContent } from "src/utils";
 import { commandTypeHelpers as ct } from "../../../commandTypes";
 import { selectRolesCmd } from "../types";
 import { splitButtonsIntoRows } from "../util/splitMenusIntoRows";
@@ -13,7 +12,7 @@ export const PostSelectRolesCmd = selectRolesCmd({
 
   signature: {
     channel: ct.textChannel(),
-    selectGroup: tMessageContent,
+    selectGroup: ct.string(),
   },
 
   async run({ message: msg, args, pluginData }) {
@@ -57,7 +56,7 @@ export const PostSelectRolesCmd = selectRolesCmd({
     const rows = splitButtonsIntoRows(selectMenus, Object.values(group.menus)); // new MessageActionRow().addComponents(buttons);
 
     try {
-      const newMsg = await args.channel.send({ content: group.message, components: rows });
+      const newMsg = await args.channel.send({ content: group.tMessageContent, components: rows });
 
       for (const btn of toInsert) {
         await pluginData.state.selectMenus.add(args.channel.id, newMsg.id, btn.customId, btn.selectGroup, btn.menuName);
