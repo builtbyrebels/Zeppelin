@@ -3,7 +3,7 @@ import { BasePluginType, typedGuildCommand, typedGuildEventListener } from "knub
 import { GuildSelectRoles } from "src/data/GuildSelectRoles";
 import { GuildSavedMessages } from "../../data/GuildSavedMessages";
 import { Queue } from "../../Queue";
-import { tMessageContent, tNullable } from "../../utils";
+import { tNullable } from "../../utils";
 
 const SelectMenuItem = t.type({
   label: t.string,
@@ -24,7 +24,8 @@ const SelectMenuOpts = t.type({
 export type TSelectMenuOpts = t.TypeOf<typeof SelectMenuOpts>;
 
 const SelectMenuPairOpts = t.type({
-  message: tMessageContent,
+  message: t.string,
+  // tMessageContent
   menus: t.record(t.string, SelectMenuOpts),
 });
 export type TSelectMenuPairOpts = t.TypeOf<typeof SelectMenuPairOpts>;
