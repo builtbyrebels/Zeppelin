@@ -1,5 +1,5 @@
 import { createHash } from "crypto";
-import { MessageButton, MessageSelectMenu, Snowflake, MessageSelectOptionData, MessageOptions } from "discord.js";
+import { MessageButton, MessageSelectMenu, Snowflake, MessageSelectOptionData } from "discord.js";
 import moment from "moment";
 import { sendErrorMessage, sendSuccessMessage } from "src/pluginUtils";
 import { commandTypeHelpers as ct } from "../../../commandTypes";
@@ -56,7 +56,7 @@ export const PostSelectRolesCmd = selectRolesCmd({
     const rows = splitButtonsIntoRows(selectMenus, Object.values(group.menus)); // new MessageActionRow().addComponents(buttons);
 
     try {
-      const newMsg = await args.channel.send({ embeds: group.message, components: rows });
+      const newMsg = await args.channel.send({ content: group.message, components: rows });
 
       for (const btn of toInsert) {
         await pluginData.state.selectMenus.add(args.channel.id, newMsg.id, btn.customId, btn.selectGroup, btn.menuName);
