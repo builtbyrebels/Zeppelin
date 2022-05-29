@@ -2,6 +2,7 @@ import { createHash } from "crypto";
 import { MessageButton, MessageSelectMenu, Snowflake, MessageSelectOptionData, MessageOptions } from "discord.js";
 import moment from "moment";
 import { sendErrorMessage, sendSuccessMessage } from "src/pluginUtils";
+import { tMessageContent } from "src/utils";
 import { commandTypeHelpers as ct } from "../../../commandTypes";
 import { selectRolesCmd } from "../types";
 import { splitButtonsIntoRows } from "../util/splitMenusIntoRows";
@@ -12,7 +13,7 @@ export const PostSelectRolesCmd = selectRolesCmd({
 
   signature: {
     channel: ct.textChannel(),
-    selectGroup: ct.embed(),
+    selectGroup: tMessageContent,
   },
 
   async run({ message: msg, args, pluginData }) {
