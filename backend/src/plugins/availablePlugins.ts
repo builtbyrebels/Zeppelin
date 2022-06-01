@@ -28,6 +28,7 @@ import { RoleManagerPlugin } from "./RoleManager/RoleManagerPlugin";
 import { RoleButtonsPlugin } from "./RoleButtons/RoleButtonsPlugin";
 import { SelectMenuRolesPlugin } from "./SelectMenuRoles/SelectMenuRolesPlugin";
 import { SelfGrantableRolesPlugin } from "./SelfGrantableRoles/SelfGrantableRolesPlugin";
+import { SocialMediaPosterPlugin } from "./SocialMediaPoster/SocialMediaPosterPlugin";
 import { SlowmodePlugin } from "./Slowmode/SlowmodePlugin";
 import { SpamPlugin } from "./Spam/SpamPlugin";
 import { StarboardPlugin } from "./Starboard/StarboardPlugin";
@@ -59,6 +60,7 @@ export const guildPlugins: Array<ZeppelinGuildPluginBlueprint<any>> = [
   RemindersPlugin,
   RolesPlugin,
   SelfGrantableRolesPlugin,
+  SocialMediaPosterPlugin,
   SlowmodePlugin,
   SpamPlugin,
   StarboardPlugin,
