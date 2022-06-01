@@ -6,7 +6,7 @@
 # Run hotfix update
 cd backend
 nvm use
-git pull
+git pull origin master
 npm run build
 
 # Restart processes

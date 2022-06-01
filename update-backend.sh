@@ -10,7 +10,7 @@ pm2 delete process-api.json
 
 # Run update
 nvm use
-git pull
+git pull origin master
 npm ci
 
 cd backend
