@@ -1,3 +1,4 @@
+import { ActivitiesPlugin } from "./Activities/ActivitiesPlugin";
 import { AutoDeletePlugin } from "./AutoDelete/AutoDeletePlugin";
 import { AutomodPlugin } from "./Automod/AutomodPlugin";
 import { AutoReactionsPlugin } from "./AutoReactions/AutoReactionsPlugin";
@@ -43,6 +44,7 @@ import { InternalPosterPlugin } from "./InternalPoster/InternalPosterPlugin";
 
 // prettier-ignore
 export const guildPlugins: Array<ZeppelinGuildPluginBlueprint<any>> = [
+  ActivitiesPlugin,
   AutoDeletePlugin,
   AutoReactionsPlugin,
   GuildInfoSaverPlugin,
