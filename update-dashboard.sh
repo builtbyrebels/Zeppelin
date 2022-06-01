@@ -7,7 +7,7 @@ TARGET_DIR=/var/www/zeppelin.gg
 
 # Update dashboard
 cd dashboard
-git pull
+git pull origin master
 nvm use
 npm ci
 npm run build
