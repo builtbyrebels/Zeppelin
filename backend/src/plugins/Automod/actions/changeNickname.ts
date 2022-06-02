@@ -3,6 +3,8 @@ import { LogType } from "../../../data/LogType";
 import { nonNullish, unique } from "../../../utils";
 import { LogsPlugin } from "../../Logs/LogsPlugin";
 import { automodAction } from "../helpers";
+import { userToTemplateSafeUser } from "../../../utils/templateSafeObjects";
+import { renderTemplate, TemplateSafeValueContainer } from "../../../templateFormatter";
 
 export const ChangeNicknameAction = automodAction({
   configType: t.union([
@@ -19,7 +21,18 @@ export const ChangeNicknameAction = automodAction({
 
     for (const member of members) {
       if (pluginData.state.recentNicknameChanges.has(member.id)) continue;
-      const newName = typeof actionConfig === "string" ? actionConfig : actionConfig.name;
+      let newName = typeof actionConfig === "string" ? actionConfig : actionConfig.name;
+
+      const renderUsernameText = async (str: string) =>
+        renderTemplate(
+          str,
+          new TemplateSafeValueContainer({
+            user: userToTemplateSafeUser(member.user),
+          }),
+        );
+
+      const renderedNewName = await renderUsernameText(newName);
+      if (renderedNewName) newName = renderedNewName;
 
       member.edit({ nick: newName }).catch((err) => {
         pluginData.getPlugin(LogsPlugin).logBotAlert({
