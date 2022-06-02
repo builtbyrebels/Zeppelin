@@ -1,9 +1,9 @@
 <template>
   <div class="privacy-policy">
     <div class="wrapper">
-      <h1>Zeppelin Privacy Policy</h1>
+      <h1>Zeppelin/SnakeEyes Privacy Policy</h1>
 
-      <h2>Zeppelin overview</h2>
+      <h2>Zeppelin/SnakeEyes overview</h2>
       <p>
         Zeppelin is a moderation bot for Discord that allows server staff to
         carry out moderator actions (warn, mute, kick, ban, clean messages, view
