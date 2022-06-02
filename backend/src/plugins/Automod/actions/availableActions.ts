@@ -7,6 +7,7 @@ import { ArchiveThreadAction } from "./archiveThread";
 import { BanAction } from "./ban";
 import { ChangeNicknameAction } from "./changeNickname";
 import { ChangePermsAction } from "./changePerms";
+import { CrosspostMessageAction } from "./crosspostMessage";
 import { CleanAction } from "./clean";
 import { KickAction } from "./kick";
 import { LogAction } from "./log";
@@ -34,6 +35,7 @@ export const availableActions: Record<string, AutomodActionBlueprint<any>> = {
   reply: ReplyAction,
   add_to_counter: AddToCounterAction,
   set_counter: SetCounterAction,
+  crosspost_message: CrosspostMessageAction,
   set_slowmode: SetSlowmodeAction,
   start_thread: StartThreadAction,
   archive_thread: ArchiveThreadAction,
@@ -53,6 +55,7 @@ export const AvailableActions = t.type({
   remove_roles: RemoveRolesAction.configType,
   set_antiraid_level: SetAntiraidLevelAction.configType,
   reply: ReplyAction.configType,
+  crosspost_message: CrosspostMessageAction.configType,
   add_to_counter: AddToCounterAction.configType,
   set_counter: SetCounterAction.configType,
   set_slowmode: SetSlowmodeAction.configType,
