@@ -19,7 +19,7 @@ const defaultOptions: PluginOptions<ActivitiesPluginType> = {
 };
 
 export const ActivitiesPlugin = zeppelinGuildPlugin<ActivitiesPluginType>()({
-  name: "activities",
+  name: "Activities",
   showInDocs: true,
 
   commands: [
