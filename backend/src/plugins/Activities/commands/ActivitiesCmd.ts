@@ -16,7 +16,10 @@ export const activities = {
   word: '879863976006127627',
   sketchheads: '902271654783242291',
   spellcast: '852509694341283871',
-  ocho: '832025144389533716',
+  blazing8s: '832025144389533716',
+  bobbleleague: '947957217959759964',
+  landio: '903769130790969345',
+  puttparty: '945737671223947305',
 }
 
 export const ActivitiesCmd = activitiesCmd({
