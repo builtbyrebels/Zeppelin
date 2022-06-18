@@ -1,20 +1,8 @@
-<<<<<<< HEAD
-import { MessageOptions, NewsChannel, TextChannel } from "discord.js";
-||||||| ba781038
-import { Message, MessageOptions, NewsChannel, TextChannel, WebhookClient } from "discord.js";
-=======
 import { GuildTextBasedChannel, Message, MessageOptions, NewsChannel, TextChannel, WebhookClient } from "discord.js";
->>>>>>> pr/perpelator/14
 import { GuildPluginData } from "knub";
 import { InternalPosterPluginType } from "../types";
-<<<<<<< HEAD
-||||||| ba781038
-import { getOrCreateWebhookForChannel } from "./getOrCreateWebhookForChannel";
-import { APIMessage } from "discord-api-types";
-=======
 import { channelIsWebhookable, getOrCreateWebhookForChannel } from "./getOrCreateWebhookForChannel";
 import { APIMessage } from "discord-api-types";
->>>>>>> pr/perpelator/14
 import { isDiscordAPIError } from "../../../utils";
 import { getOrCreateWebhookClientForChannel } from "./getOrCreateWebhookClientForChannel";
 
